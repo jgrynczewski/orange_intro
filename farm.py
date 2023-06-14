@@ -32,6 +32,22 @@ class Cow:
     def get_older(self):
         self.age += 1
 
+    def give_milk(self, canka):
+        if not self.hungry:
+            canka.fill()
+            self.hungry = True
+        else:
+            print("Ej, najpierw może byś mnie nakaremił, co ??")
+
+
+class Canka:
+    def __init__(self, volume):
+        self.volume = volume
+        self.is_full = False
+
+    def fill(self):
+        self.is_full = True
+
 
 c = Cow("Mućka", 2)
 c.speak()
@@ -43,3 +59,8 @@ c.eat("woda")
 print(f"Krowa {c.name} ma {c.age} lat.")
 c.get_older()
 print(f"Krowa {c.name} ma {c.age} lat.")
+
+# Powiązujemy (sprzęgamy, ang. coupling) ze sobą dwa obiekty w najsłabszy możliwy sposób (tzw. zależność, ang. dependency)
+# Zależność A od B oznacz - A "korzysta z / używa" B
+k = Canka(5)
+c.give_milk(k)

@@ -11,7 +11,7 @@ class Cow:
 
     # metoda czytająca stan obiektu (atrubut name)
     def speak(self):
-        print(f"Muuuuuuuuuuuuuuuu, jestem krowa o imieniu {self.name}")
+        print(f"Muuuuuuuuuuuuuuuu, jestem krową o imieniu {self.name}")
 
     # metody modyfikujące stan obiektu
     def eat(self, meal):
@@ -60,6 +60,7 @@ print(f"Krowa {c.name} ma {c.age} lat.")
 c.get_older()
 print(f"Krowa {c.name} ma {c.age} lat.")
 
+# 1. Zależność
 # Powiązujemy (sprzęgamy, ang. coupling) ze sobą dwa obiekty w najsłabszy możliwy sposób (tzw. zależność, ang. dependency)
 # Zależność A od B oznacz - A "korzysta z / używa" B
 k = Canka(5)
